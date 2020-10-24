@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# script to start korg microKEY-25 and connect to fluidsynth
+# based an script by Ted Felix based on a script by Antonio Bonfati
+
+# check if fluidsynth is runnning
+if ! pgrep -l fluidsynth
+then
+	echo fluidsynth not running, please start it first
+
+else
+	# figuring out the ports of vmpk and fluidsynth
+	microkeyport=$(aconnect -i | grep "microKEY-25" | cut -d ' ' -f 2)0
+	fluidsynthport=$(aconnect -o | grep "FLUID Synth" | cut -d ' ' -f 2)0
+
+	echo microKEY output port: $microkeyport
+	echo fluidsynth output port: $fluidsynthport
+
+	# connect the ports
+	aconnect $microkeyport $fluidsynthport
+fi

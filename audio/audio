@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# script to start, stop and harmonize different audio tools
+# build upon the "Audio Script" found on http://tedfelix.com/linux/linux-midi.html
+
+case $1 in 
+
+	start )
+		
+		echo Starting JACK...
+		pasuspender -- \
+			jackd -d alsa --device hw:1 --rate 44100 --period 128 \
+			&>/tmp/jackd.out &
+		
+		sleep .5
+
+		echo Starting fluidsynth...
+		fluidsynth --server --no-shell --audio-driver=jack \
+			--connect-jack-outputs --reverb=0 --chorus=0 --gain=0.8 \
+			/usr/share/sounds/sf2/FluidR3_GM.sf2 \
+			&>/tmp/fluidsynth.out &
+
+		sleep 1
+
+		if pgrep -l jackd && pgrep -l fluidsynth
+		then
+			echo servers running.
+		else
+			echo something went wrong.
+		fi
+
+		;;
+
+	stop )
+		killall fluidsynth
+		killall jackd
+		echo Audio servers stopped.
+		;;
+
+	* )
+		echo Please specify start or stop
+		;;
+esac

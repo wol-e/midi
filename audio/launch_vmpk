@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# script to start vmpk and connect to fluidsynth
+# based an script by Ted Felix based on a script by Antonio Bonfati
+
+# check if fluidsynth is runnning
+if ! pgrep -l fluidsynth
+then
+	echo fluidsynth not running, please start it first
+
+else
+	# check if vmpk is running and start it if not
+	if ! pgrep -l "^vmpk$"
+	then
+		echo debug this
+		vmpk &
+		sleep 1
+	fi
+
+	# figuring out the ports of vmpk and fluidsynth
+	vmpkport=$(aconnect -i | grep "client.*VMPK Output" | cut -d ' ' -f 2)0
+	fluidsynthport=$(aconnect -o | grep "FLUID Synth" | cut -d ' ' -f 2)0
+
+	echo vmpk output port: $vmpkport
+	echo fluidsynth output port: $fluidsynthport
+
+	# connect the ports
+	aconnect $vmpkport $fluidsynthport
+fi
