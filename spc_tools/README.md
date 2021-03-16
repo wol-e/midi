@@ -1,7 +1,7 @@
 # spc_tools
 a bash scripts wrapping some popular spc tools from windows
 
-Basically some scripts to conveniently handle common spc tasks for Super Mario World (SMW) like
+Basically some scripts to conveniently handle common spc tasks for Super Mario World (SMW) Music creation via SPC's like
 - Creating an spc from a txt file via Addmusick
 - Playback of spc via SPC Player 700
 - Converting spc to wav (development version)
