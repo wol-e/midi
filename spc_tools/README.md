@@ -23,6 +23,10 @@ An important setup step is you **need to set the directory variables where AMK a
 
 `amk_dir='/home/wolle/Music/rom_music/AMK/AddmusicK_1.0.6'`
 
+If you don't want to refer to the scripts location when using it you cann add teh script to your path. For example this can be achieved by adding a symbolic link to your users personal binaries directory at `~/bin` (if it does not exist you can just create the directory):
+
+`ln -s ./spc_tool ~/bin/spc_tool`
+
 ## Usage
 
 To display an overview of it's usage on the command line simply run `./spc_tool -h`. Then you will see this output, which should get you everywhere:
