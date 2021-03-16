@@ -2,11 +2,11 @@
 
 #SPC
 {
-	#author "wol_e"
-	#title "ghost house 2100"
+	#author "spc_tools"
+	#title "test"
 	#game "Custom song/SMW"
-	#length "0:46"
-	#comment "music composition #3"
+	#length "0:10"
+	#comment "test for spc tool setup"
 }
 
 
@@ -16,95 +16,13 @@
 
 #0 w255 t50
 
-@10 $ed$78$ed ;; adsr to start very softs
-
 v200 o2
 
-(1)[r1] ; bar 1
+(1)[c4 c4 c4 c4] ; bar 1
 (1) ; bar 2
-[r2 o5d16 <b-16 g16 f16 g16 e-16 c16 <b16] ; bar 3
-(2)[o4 c16 b-16 c16 b-16 c16 b-16 c16 b-16 c16 a-16 c16 a-16 c16 a-16 c16 a-16] ; bar 4
-(3)[o4 c16 g16  c16 g16  c16 g16  c16 g16  c16 e-16 c16 e-16 c16 e-16 c16 e-16] ; bar 5
-(2) ; bar 6
-(3) ; bar 7
-(2) ; bar 8
-(3) ; bar 9
-(2) ; bar 10
-(3) ; bar 11
-(4)[o4d16 <b-16 g16 f16 g16 e-16 c16 <b16 o3d16 <b-16 g16 f16 g16 e-16 c16 <b16] ; bar 12
-(4) ; bar 13
-(1) ; bar 14
-(2) ; bar 15
-(3) ; bar 16
-(2) ; bar 17
-(3) ; bar 18
-(2) ; bar 19
-(3) ; bar 20
-(2) ; bar 21
-(3) ; bar 22
-(4)2 ; bar 23 to 24
-
-;;;;;;;;;;;;;;;;;;;;;;
-;;; @4 Cello bass  ;;;
-;;;;;;;;;;;;;;;;;;;;;;
 
 #1
 
-@1 $ed$75$ed
-
-v255 o2
-
-(11)[c4 c4 c4 c4] ; bar 1
-(11) ; bar 2
-[c4 c4 r2] ; bar 3
-(11)8 ; bar 4 to 11
-[r1]2 ; bar 12 to 13
-(11) ; bar 14
-[r1]10 ; bar 15 to 24
-
-;;;;;;;;;;;;;;;;;;;;;;;
-;;; @4 Cello bass 2 ;;;
-;;;;;;;;;;;;;;;;;;;;;;;
-
-#2
-
-@4 $ed$7f$ed
-
-v175 o2
-
-[r1]14 ; bar 1 to 14
-[c16 c16 c16 c16 c16 c16 c16 c16 c16 c16 c16 c16 c16 c16 c16 c16 ]8 ; bar 15 to 22
-[r1]2 ; bar 23 and 24
-
-;;;;;;;;;;;;;;;;;;;;;
-;;; #5 drums beat ;;;
-;;;;;;;;;;;;;;;;;;;;;
-
-#5
-
-v200 o4
-
-@22
-(51)[r1] ; bar 1
-(52)[c16 c16 c16 r16 c16 c16 c16 r16 c16 c16 c16 r16 c16 c16 c16 r16] ; bar 2
-(53)[c16 c16 c16 r16 c16 c16 c16 r16 r2] ; bar 3
-(54)[@23 c4 c4 c4 c4] ; bar 4
-(52)6 ; bar 5 to 10
-(51)2 ; bar 11 to 12
-(54) ; bar 13
-(52)9 ; bar 14 to 22
-[r1]2 ; bar 23 to 24
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; @13 Electric Piano harmony ;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-#3
-
-@13
-
 v255 o4
 
-[c1 c1] ; bar 1 to 2
-(21)[c1 o3b-1 g1 a-1 e-1 b-1 g1 a-1 e-1^1^1]; bar 3 to 13
-(21) ; bar 15 to 25
+r1 c4 e4 g4 < c4
