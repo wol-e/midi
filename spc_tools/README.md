@@ -27,6 +27,7 @@ If you don't want to refer to the scripts location when using it you cann add te
 
 `ln -s ./spc_tool ~/bin/spc_tool`
 
+After doing this step you can replace all references to `./spc_tool` below with simply `spc_tool`.
 ## Usage
 
 To display an overview of it's usage on the command line simply run `./spc_tool -h`. Then you will see this output, which should get you everywhere:
